@@ -25,7 +25,7 @@ f679f16769ca287b9685c1059328d8c3d4cf8413ff8068f020851df6fd17e5a7        <none>:<
 Notes:
 ======
 
-It is interesting to not that the canonical way to address an image - the `Image's digest` - is not related to the way the docker images are addressed by the docker-engine: by `Image ID`.
+It is interesting to observe that the canonical way to address an image - the `Image's digest` - is not related to the way the docker images are addressed by the docker-engine: by `Image ID`.
 
-This tool was coded in python. We could also script it in bash.
+This tool was coded in golang. We could also script it in bash.
 
