@@ -1,7 +1,13 @@
 Container update checker
 ========================
 
-Tool that checks if a running container's image is matching the same image on the remote repository.
+Tool that checks if a running container's image and tag is matching the same image and tag on the remote repository.
+
+There are a handful a situation where the image and tag of a container does not match that same image and tag on a docker registry:
+- if a new image has been pushed with the same tag. for example `latest`
+- if a new image has been built with the same tag locally after the container was started.
+
+The tool will report such discrepancy.
 
 ```
  hugues in ~/go/src/github.com/hmalphettes/containertagchecker
@@ -14,4 +20,10 @@ f679f16769ca287b9685c1059328d8c3d4cf8413ff8068f020851df6fd17e5a7        <none>:<
 3b8310b9f5662c995d0113cd9031bdc212cdfe184a0ec67f436bc2c01e9b72d9        jwilder/whoami:hugues        NOTFOUND
 ```
 
+![containertagchecker](containertagchecker.png)]
+
+Notes:
+======
+
+It is interesting to not that the canonical way to address an image - the `Image's digest` - is not related to the way the docker images are addressed by the docker-engine: by `Image ID`.
 
